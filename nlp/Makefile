@@ -1,3 +1,5 @@
+.PHONY: vendor
+
 default: run
 
 clean:
@@ -12,9 +14,9 @@ test: vendor
 	go test -v -race `go list ./... | grep -v /vendor/`
 
 build: test
-	cp -r ../DTR . && cp -r ../CSEngine . && cp -r ../UCP .
+	cp -r ../DTR . && cp -r ../CSEngine . && cp -r ../UCP . && cp -r ../UCPAuthNAuthZService .
 	docker build -t docker/ddc-opencontrol-nlp .
-	rm -rf DTR/ CSEngine/ UCP/
+	rm -rf DTR/ CSEngine/ UCP/ UCPAuthNAuthZService/
 
 run: build
-	docker run --rm -e "TEXT_ANALYTICS_API_KEY=$$TEXT_ANALYTICS_API_KEY" docker/ddc-opencontrol-nlp
+	docker run --rm -e "TEXT_ANALYTICS_API_KEY=$$TEXT_ANALYTICS_API_KEY" docker/ddc-opencontrol-nlp nlp analyze keyphrases
