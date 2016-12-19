@@ -19,4 +19,4 @@ build: test
 	rm -rf DTR/ CSEngine/ UCP/ UCPAuthNAuthZService/
 
 run: build
-	docker run --rm -e "TEXT_ANALYTICS_API_KEY=$$TEXT_ANALYTICS_API_KEY" docker/ddc-opencontrol-nlp nlp analyze keyphrases
+	docker run --rm -e "TEXT_ANALYTICS_API_KEY=$$TEXT_ANALYTICS_API_KEY" docker/ddc-opencontrol-nlp analyze keyphrases
