@@ -36,6 +36,44 @@ satisfies:
           https://docs.docker.com/engine/admin/logging/overview/.'
     standard_key: NIST-800-53
 
+  - control_key: AC-4
+    covered_by: []
+    implementation_statuses:
+      - complete
+    control_origins:
+      - service provider system specific
+      - configured by customer
+    narrative:
+      - text: |
+          'CS Docker Engine can be configured to control the flow of information that originates from applications running in containers. Docker container networking can be configured to meet this control's requirements by referencing the documentation at https://docs.docker.com/engine/userguide/networking/. In addition, a detailed reference architecture for designing scalable and portable Docker container networks can be found at http://success.docker.com/Datacenter/Apply/Docker_Reference_Architecture%3A_Designing_Scalable%2C_Portable_Docker_Container_Networks.'
+    standard_key: NIST-800-53
+
+  - control_key: AC-4 (8)
+    covered_by: []
+    implementation_statuses:
+      - complete
+    control_origins:
+      - service provider system specific
+      - configured by customer
+    narrative:
+      - text: |
+          'CS Docker Engine can be configured to control the flow of information that originates from applications running in containers per organization-defined security policy filters. Docker container networking can be configured to meet this control's requirements by referencing the documentation at https://docs.docker.com/engine/userguide/networking/. A detailed reference architecture for designing scalable and portable Docker container networks can be found at http://success.docker.com/Datacenter/Apply/Docker_Reference_Architecture%3A_Designing_Scalable%2C_Portable_Docker_Container_Networks.
+          
+          There are also third-party behavioral activity monitoring tools (e.g. Sysdig Falco <http://www.sysdig.org/falco/>) that can be used alongside CS Docker Engine to satisfy this control's requirements.'
+    standard_key: NIST-800-53
+
+  - control_key: AC-4 (21)
+    covered_by: []
+    implementation_statuses:
+      - complete
+    control_origins:
+      - service provider system specific
+      - configured by customer
+    narrative:
+      - text: |
+          'CS Docker Engine can be configured to separate the flow of information that originates from applications running in containers. Docker container networking can be configured to meet this control's requirements by referencing the documentation at https://docs.docker.com/engine/userguide/networking/. In addition, a detailed reference architecture for designing scalable and portable Docker container networks can be found at http://success.docker.com/Datacenter/Apply/Docker_Reference_Architecture%3A_Designing_Scalable%2C_Portable_Docker_Container_Networks.'
+    standard_key: NIST-800-53
+
   - control_key: AC-17 (1)
     covered_by: []
     implementation_statuses:
