@@ -215,18 +215,22 @@ satisfies:
       - service provider system specific
     narrative:
       - text: |
-          'You can control which users and teams can create and manipulate
+          'One can control which users and teams can create and manipulate
           Docker Datacenter resources. By default, no one can make changes to
           the cluster. Permissions can be granted and managed to enforce
-          fine-grained access control. Authentication and authorization
-          documentation for the management of users and teams can be found at
-          https://docs.docker.com/datacenter/ucp/2.0/guides/user-management/ and
-          at https://docs.docker.com/datacenter/dtr/2.1/guides/user-management/.
-          The various levels of permissions provided by Docker Datacenter can be
-          found at
-          https://docs.docker.com/datacenter/ucp/2.0/guides/user-management/permission-levels/
-          and at
-          https://docs.docker.com/datacenter/dtr/2.1/guides/user-management/permission-levels/.'
+          fine-grained access control. Supporting documentation can be found at
+          the following resources:
+
+          UCP:
+          - https://docs.docker.com/datacenter/ucp/2.1/guides/admin/manage-users/
+          - https://docs.docker.com/datacenter/ucp/2.1/guides/admin/manage-users/permission-levels/
+          - https://success.docker.com/KBase/Docker_Reference_Architecture%3A_Docker_Datacenter_Best_Practices_and_Design_Considerations#RBAC_and_Managing_Team_Level_Access_to_Resources
+          - https://success.docker.com/KBase/Docker_Reference_Architecture%3A_Securing_Docker_Datacenter_and_Security_Best_Practices#RBAC
+          
+          DTR:
+          - https://docs.docker.com/datacenter/dtr/2.2/guides/admin/manage-users/
+          - https://docs.docker.com/datacenter/dtr/2.2/guides/admin/manage-users/permission-levels/
+          - https://success.docker.com/KBase/Docker_Reference_Architecture%3A_Securing_Docker_Datacenter_and_Security_Best_Practices#Organizations_.E2.80.94_RBAC'
     standard_key: NIST-800-53
 
   - control_key: AC-6 (9)

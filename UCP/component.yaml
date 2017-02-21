@@ -65,15 +65,40 @@ satisfies:
       - complete
     control_origins:
       - service provider system specific
+      - configured by customer
     narrative:
       - text: |
-          'The Universal Control Plane system architecture can be found at
-          https://docs.docker.com/datacenter/ucp/2.0/guides/architecture/.
-          Information specific to container networking within UCP can be found
-          at
-          https://docs.docker.com/datacenter/ucp/2.0/guides/configuration/route-hostnames/.
-          The ports used by UCP for communication are documented at
-          https://docs.docker.com/datacenter/ucp/2.0/guides/installation/system-requirements/#/ports-used.'
+          'Supporting documentation to configure Universal Control Plane to meet the requirements of this control can
+          be found at the following resources:
+          
+          - https://docs.docker.com/datacenter/ucp/2.1/guides/architecture/
+          - https://docs.docker.com/datacenter/ucp/2.1/guides/admin/install/system-requirements/#/ports-used
+          - https://docs.docker.com/datacenter/ucp/2.1/guides/admin/configure/use-domain-names-to-access-services/
+          - https://docs.docker.com/datacenter/ucp/2.1/guides/admin/configure/restrict-services-to-worker-nodes/
+          - https://success.docker.com/KBase/Docker_Reference_Architecture%3A_Universal_Control_Plane_2.0_Service_Discovery_and_Load_Balancing
+          - https://success.docker.com/KBase/Docker_Reference_Architecture%3A_Docker_Datacenter_Best_Practices_and_Design_Considerations#Infrastructure_Considerations
+          - https://success.docker.com/KBase/Docker_Reference_Architecture%3A_Securing_Docker_Datacenter_and_Security_Best_Practices#Networking'
+    standard_key: NIST-800-53
+  
+  - control_key: AC-4 (8)
+    covered_by: []
+    implementation_statuses:
+      - complete
+    control_origins:
+      - service provider system specific
+      - configured by customer
+    narrative:
+      - text: |
+          'Supporting documentation to configure Universal Control Plane to meet the requirements of this control can
+          be found at the following resources:
+          
+          - https://docs.docker.com/datacenter/ucp/2.1/guides/architecture/
+          - https://docs.docker.com/datacenter/ucp/2.1/guides/admin/install/system-requirements/#/ports-used
+          - https://docs.docker.com/datacenter/ucp/2.1/guides/admin/configure/use-domain-names-to-access-services/
+          - https://docs.docker.com/datacenter/ucp/2.1/guides/admin/configure/restrict-services-to-worker-nodes/
+          - https://success.docker.com/KBase/Docker_Reference_Architecture%3A_Universal_Control_Plane_2.0_Service_Discovery_and_Load_Balancing
+          - https://success.docker.com/KBase/Docker_Reference_Architecture%3A_Docker_Datacenter_Best_Practices_and_Design_Considerations#Infrastructure_Considerations
+          - https://success.docker.com/KBase/Docker_Reference_Architecture%3A_Securing_Docker_Datacenter_and_Security_Best_Practices#Networking'
     standard_key: NIST-800-53
   
   - control_key: AC-4 (21)
@@ -82,15 +107,19 @@ satisfies:
       - complete
     control_origins:
       - service provider system specific
+      - configured by customer
     narrative:
       - text: |
-          'The Universal Control Plane system architecture can be found at
-          https://docs.docker.com/datacenter/ucp/2.0/guides/architecture/.
-          Information specific to container networking within UCP can be found
-          at
-          https://docs.docker.com/datacenter/ucp/2.0/guides/configuration/route-hostnames/.
-          The ports used by UCP for communication are documented at
-          https://docs.docker.com/datacenter/ucp/2.0/guides/installation/system-requirements/#/ports-used.'
+          'Supporting documentation to configure Universal Control Plane to meet the requirements of this control can
+          be found at the following resources:
+          
+          - https://docs.docker.com/datacenter/ucp/2.1/guides/architecture/
+          - https://docs.docker.com/datacenter/ucp/2.1/guides/admin/install/system-requirements/#/ports-used
+          - https://docs.docker.com/datacenter/ucp/2.1/guides/admin/configure/use-domain-names-to-access-services/
+          - https://docs.docker.com/datacenter/ucp/2.1/guides/admin/configure/restrict-services-to-worker-nodes/
+          - https://success.docker.com/KBase/Docker_Reference_Architecture%3A_Universal_Control_Plane_2.0_Service_Discovery_and_Load_Balancing
+          - https://success.docker.com/KBase/Docker_Reference_Architecture%3A_Docker_Datacenter_Best_Practices_and_Design_Considerations#Infrastructure_Considerations
+          - https://success.docker.com/KBase/Docker_Reference_Architecture%3A_Securing_Docker_Datacenter_and_Security_Best_Practices#Networking'
     standard_key: NIST-800-53
 
   - control_key: AC-17 (2)
