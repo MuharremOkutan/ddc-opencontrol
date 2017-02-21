@@ -1,9 +1,9 @@
 documentation_complete: false
 schema_version: 3.1.0
-name: Universal Control Plane Authentication and Authorization Service
+name: eNZi Authentication and Authorization Service
 references:
   - name: UCP Documentation
-    path: https://docs.docker.com/ucp/overview/
+    path: https://success.docker.com/KBase/Docker_Reference_Architecture%3A_Docker_Datacenter_Best_Practices_and_Design_Considerations#Identity_Management
     type: URL
 satisfies:
   - control_key: AC-1
@@ -15,18 +15,20 @@ satisfies:
     narrative:
       - key: a
         text: |
-          'You can control which users and teams can create and manipulate
-          Docker Datacenter resources. By default, no one can make changes to
-          the cluster. Permissions can be granted and managed to enforce
-          fine-grained access control. Authentication and authorization
-          documentation for the management of users and teams can be found at
-          https://docs.docker.com/datacenter/ucp/2.0/guides/user-management/ and
-          at https://docs.docker.com/datacenter/dtr/2.1/guides/user-management/.
-          The various levels of permissions provided by Docker Datacenter can be
-          found at
-          https://docs.docker.com/datacenter/ucp/2.0/guides/user-management/permission-levels/
-          and at
-          https://docs.docker.com/datacenter/dtr/2.1/guides/user-management/permission-levels/.'
+          'To assist the organization in meeting the requirements of this
+          control, one can control which users and teams are allowed to create
+          and manipulate Docker Datacenter resources. By default, no one can
+          make changes to the cluster. Permissions can be granted and managed to
+          enforce fine-grained access control. Supporting documentation can
+          found at the following resources:
+          
+          UCP:
+          - https://docs.docker.com/datacenter/ucp/2.1/guides/admin/manage-users/
+          - https://docs.docker.com/datacenter/ucp/2.1/guides/admin/manage-users/permission-levels/
+          
+          DTR:
+          - https://docs.docker.com/datacenter/dtr/2.2/guides/admin/manage-users/
+          - https://docs.docker.com/datacenter/dtr/2.2/guides/admin/manage-users/permission-levels/'
     standard_key: NIST-800-53
 
   - control_key: AC-2
@@ -38,9 +40,12 @@ satisfies:
       - configured by customer
     narrative:
       - text: |
-          'Multiple backend services provide for centralized identity.
-          Descriptions of each of these services can be found at
-          https://docs.docker.com/datacenter/ucp/2.0/guides/architecture/.'
+          'To assist the organization in meeting the requirements of this
+          control, multiple backend services provide for centralized identity.
+          Supporting documentation can be found at the following resources:
+
+          UCP:
+          - https://docs.docker.com/datacenter/ucp/2.1/guides/architecture/'
     standard_key: NIST-800-53
 
   - control_key: AC-2 (2)
@@ -48,14 +53,18 @@ satisfies:
     implementation_statuses:
       - none
     control_origins:
+      - service provider system specific
       - configured by customer
     narrative:
       - text: |
           'Using Docker Datacenter’s LDAP integration capabilities, one can
-          disable user objects in a connected directory service (such as Active
-          Directory). Documentation for configuring LDAP integration can be
-          found at
-          https://docs.docker.com/datacenter/ucp/2.0/guides/configuration/integrate-with-ldap/.'
+          disable and/or remove temporary and emergency accounts in a connected
+          directory service (such as Active Directory) after an
+          organization-defined time period. When a user is removed from LDAP,
+          that user becomes inactive after the LDAP synchronization runs.
+          Supporting documentation can be found at the following resources:
+
+          - https://docs.docker.com/datacenter/ucp/2.1/guides/admin/configure/external-auth/'
     standard_key: NIST-800-53
 
   - control_key: AC-2 (3)
@@ -63,14 +72,17 @@ satisfies:
     implementation_statuses:
       - none
     control_origins:
+      - service provider system specific
       - configured by customer
     narrative:
       - text: |
           'Using Docker Datacenter’s LDAP integration capabilities, one can
-          disable user objects in a connected directory service (such as Active
-          Directory). Documentation for configuring LDAP integration can be
-          found at
-          https://docs.docker.com/datacenter/ucp/2.0/guides/configuration/integrate-with-ldap/.'
+          automatically disable inactive accounts in a connected directory
+          service (such as Active Directory). When a user is removed from LDAP,
+          that user becomes inactive after the LDAP synchronization runs.
+          Supporting documentation can be found at the following resources:
+
+          - https://docs.docker.com/datacenter/ucp/2.1/guides/admin/configure/external-auth/'
     standard_key: NIST-800-53
 
   - control_key: AC-2 (4)
@@ -82,17 +94,35 @@ satisfies:
     narrative:
       - text: |
           'Docker Datacenter logs various authentication and authorization
-          events to standard log files. These logs can be monitored by following
-          the documentation at
-          https://docs.docker.com/datacenter/ucp/2.0/guides/monitor/. One can
-          configure Docker Datacenter to direct these event logs to a remote
-          logging service such as an Elasticsearch, Logstash and Kibana (ELK)
-          stack and subsequently alert on specific event types. Instructions for
-          configuring this can be found at
-          https://docs.docker.com/datacenter/ucp/2.0/guides/configuration/configure-logs/.
-          When integrating Docker Datacenter with LDAP, one can refer the the
-          directory service's logging mechanisms for auditing the events defined
-          by this control.'
+          events to standard log files. One can configure Docker Datacenter to
+          direct these event logs to a remote logging service such as an
+          Elasticsearch, Logstash and Kibana (ELK) stack and subsequently alert
+          on specific event types. When integrating Docker Datacenter with LDAP,
+          one can refer the the directory service''s logging mechanisms for
+          auditing the events defined by this control. Supporting documentation
+          can be found at the following resources:
+          
+          - https://docs.docker.com/datacenter/ucp/2.1/guides/admin/monitor-and-troubleshoot/
+          - https://docs.docker.com/datacenter/ucp/2.1/guides/admin/monitor-and-troubleshoot/troubleshoot-with-logs/
+          - https://docs.docker.com/datacenter/ucp/2.1/guides/admin/configure/store-logs-in-an-external-system/'
+    standard_key: NIST-800-53
+
+  - control_key: AC-2 (5)
+    covered_by: []
+    implementation_statuses:
+      - complete
+    control_origins:
+      - service provider system specific
+      - configured by customer
+    narrative:
+      - text: |
+          'To assist the organization in meeting the requirements of this
+          control, Docker Datacenter can be configured to enforce automated
+          session termination of users after an organization-defined time period
+          of inactivity. By default, the initial lifetime of a user''s session
+          is set to 72 hours and the renewal session for a user''s session is
+          set to 24 hours. These values can both be changed in the "Auth"
+          section of the "Admin Settings" in Universal Control Plane.'
     standard_key: NIST-800-53
 
   - control_key: AC-2 (7)
@@ -104,10 +134,22 @@ satisfies:
     narrative:
       - key: a
         text: |
-          'Users are shared across Docker Datacenter. Administrator users have
-          permissions to: manage other Docker Datacenter users , manage Docker
-          Trusted Registry repositories and settings, and manage the whole
-          Universal Control Plane cluster.'
+          'To assist the organization in meeting the requirements of this
+          control, Docker Datacenter supports various levels of user permissions
+          and role-based access control enforcements. Administrator users have
+          permissions to: manage other Docker Datacenter users, manage Docker
+          Trusted Registry repositories and settings, and manage the Universal
+          Control Plane and underlying Docker Swarm Mode cluster. Supporting
+          documentation can be found at the following resources:
+          
+          UCP:
+          - https://docs.docker.com/datacenter/ucp/2.1/guides/admin/manage-users/permission-levels/
+          - https://success.docker.com/KBase/Docker_Reference_Architecture%3A_Docker_Datacenter_Best_Practices_and_Design_Considerations#Identity_Management
+          - https://success.docker.com/KBase/Docker_Reference_Architecture%3A_Securing_Docker_Datacenter_and_Security_Best_Practices#RBAC
+          
+          DTR:
+          - https://docs.docker.com/datacenter/dtr/2.2/guides/admin/manage-users/permission-levels/
+          - https://success.docker.com/KBase/Docker_Reference_Architecture%3A_Securing_Docker_Datacenter_and_Security_Best_Practices#Organizations_.E2.80.94_RBAC'
     standard_key: NIST-800-53
   
   - control_key: AC-2 (9)
@@ -119,9 +161,9 @@ satisfies:
       - configured by customer
     narrative:
       - text: |
-          'Users and/or groups synchronized to Docker Datacenter via LDAP can be
-          configured at the directory service to meet this requirement as
-          necessary.'
+          'To assist the organization in meeting the requirements of this
+          control, users and/or groups synchronized to Docker Datacenter via
+          LDAP can be configured at the directory service.'
     standard_key: NIST-800-53
   
   - control_key: AC-2 (10)
@@ -134,8 +176,7 @@ satisfies:
     narrative:
       - text: |
           'Users and/or groups synchronized to Docker Datacenter via LDAP can be
-          configured at the directory service to meet this requirement as
-          necessary.'
+          configured at the directory service.'
     standard_key: NIST-800-53
 
   - control_key: AC-2 (11)
@@ -147,9 +188,9 @@ satisfies:
       - configured by customer
     narrative:
       - text: |
-          'Users and/or groups synchronized to Docker Datacenter via LDAP can be
-          configured at the directory service to meet this requirement as
-          necessary.'
+          'Information system accounts synchronized to Docker Datacenter via
+          LDAP can be configured at the directory service to meet this
+          requirement as necessary.'
     standard_key: NIST-800-53
   
   - control_key: AC-2 (12)
@@ -161,9 +202,9 @@ satisfies:
       - configured by customer
     narrative:
       - text: |
-          'When Docker Datacenter is configured for LDAP integration, one can
-          refer to the directory service's existing monitoring tools to meet the
-          requirements defined by this control.'
+          'To assist the organization in meeting the requirements of this
+          control, when Docker Datacenter is configured for LDAP integration,
+          one can refer to the directory service''s existing monitoring tools.'
     standard_key: NIST-800-53
 
   - control_key: AC-3
